@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:open_coffeeshop/main.dart';
+import 'package:open_coffeeshop/module/product/product.dart';
 
 class AppRoutes {
   static const String main = '/';
