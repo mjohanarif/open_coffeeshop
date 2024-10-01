@@ -4,6 +4,7 @@ import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:open_coffeeshop/module/product/product.dart';
+import 'package:open_coffeeshop/module/weather/weather.dart';
 import 'package:open_coffeeshop/shared/shared.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -15,6 +16,12 @@ Future<void> initLocator() async {
     ..registerLazySingleton<ProductsRepository>(
       () => ProductRepositoryImpl(
         localDataSource: locator(),
+      ),
+    )
+    ..registerLazySingleton<WeatherRepository>(
+      () => WeatherRepositoryImpl(
+        localDataSource: locator(),
+        remoteDataSource: locator(),
       ),
     )
 
@@ -44,11 +51,26 @@ Future<void> initLocator() async {
         repository: locator(),
       ),
     )
+    ..registerLazySingleton(
+      () => GetWeatherForecastUsecase(
+        repository: locator(),
+      ),
+    )
 
     // data source
     ..registerLazySingleton<ProductLocalDataSource>(
       () => ProductLocalDataSourceImpl(
         cacheHandler: locator(),
+      ),
+    )
+    ..registerLazySingleton<WeatherLocalDataSource>(
+      () => WeatherLocalDataSourceImpl(
+        cacheHandler: locator(),
+      ),
+    )
+    ..registerLazySingleton<WeatherRemoteDataSource>(
+      () => WeatherRemoteDataSourceImpl(
+        client: locator(),
       ),
     )
 
@@ -61,6 +83,9 @@ Future<void> initLocator() async {
     )
     ..registerFactory(
       () => CartProductBloc(locator(), locator(), locator()),
+    )
+    ..registerFactory(
+      () => GetWeatherForecastBloc(locator()),
     )
 
     // external

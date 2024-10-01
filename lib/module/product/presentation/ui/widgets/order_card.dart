@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:open_coffeeshop/module/product/product.dart';
 import 'package:open_coffeeshop/shared/shared.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OrderCard extends StatelessWidget {
   final CartProductModel product;
@@ -30,8 +31,8 @@ class OrderCard extends StatelessWidget {
                     left: Radius.circular(8),
                   ),
                   urlToImage: product.products.imageUrl,
-                  width: 50,
-                  height: 50,
+                  width: 50.w,
+                  height: 50.h,
                 ),
                 const AppSpacing(h: 6),
                 Expanded(

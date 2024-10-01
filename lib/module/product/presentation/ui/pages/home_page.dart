@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:open_coffeeshop/module/product/product.dart';
+import 'package:open_coffeeshop/module/weather/weather.dart';
 import 'package:open_coffeeshop/shared/shared.dart';
 import 'package:badges/badges.dart' as badges;
 
@@ -23,6 +24,7 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
           child: ListView(
             children: [
+              const StatusSection(),
               Row(
                 children: [
                   Expanded(

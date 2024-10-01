@@ -61,7 +61,6 @@ class ProductLocalDataSourceImpl implements ProductLocalDataSource {
       if (result == null) {
         throw CacheException(message: "Can't save products data");
       }
-      isDataSavedLocally();
 
       return 'Success saving products';
     } on CacheException catch (e) {

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:open_coffeeshop/module/product/product.dart';
+import 'package:open_coffeeshop/module/weather/presentation/ui/pages/forecast_page.dart';
 
 class AppRoutes {
   static const String main = '/';
   static const String detailProductPage = '/detail-product-page';
   static const String cartPage = '/cart-page';
   static const String paymentPage = '/payment-page';
+  static const String forecastPage = '/forecast-page';
   static Route onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
       case main:
@@ -23,6 +25,10 @@ class AppRoutes {
       case paymentPage:
         return _materialRoute(
           const PaymentPage(),
+        );
+      case forecastPage:
+        return _materialRoute(
+          const ForecastPage(),
         );
 
       default:

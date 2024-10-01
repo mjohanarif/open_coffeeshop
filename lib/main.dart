@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:open_coffeeshop/injection.dart';
 import 'package:open_coffeeshop/module/product/product.dart';
+import 'package:open_coffeeshop/module/weather/weather.dart';
 import 'package:open_coffeeshop/shared/shared.dart';
 
 Future<void> main() async {
@@ -43,6 +44,12 @@ class MainApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => locator<CartProductBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => locator<GetWeatherForecastBloc>()
+              ..add(
+                const GetWeatherForecastEvent.getWeatherForecast(),
+              ),
           ),
         ],
         child: MaterialApp(
