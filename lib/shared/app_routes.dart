@@ -3,12 +3,26 @@ import 'package:open_coffeeshop/module/product/product.dart';
 
 class AppRoutes {
   static const String main = '/';
-  static const String login = '/login';
+  static const String detailProductPage = '/detail-product-page';
+  static const String cartPage = '/cart-page';
+  static const String paymentPage = '/payment-page';
   static Route onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
       case main:
         return _materialRoute(
           const HomePage(),
+        );
+      case detailProductPage:
+        return _materialRoute(
+          DetailProductPage(data: settings.arguments as ProductModel),
+        );
+      case cartPage:
+        return _materialRoute(
+          const CartPage(),
+        );
+      case paymentPage:
+        return _materialRoute(
+          const PaymentPage(),
         );
 
       default:

@@ -41,6 +41,9 @@ class MainApp extends StatelessWidget {
           BlocProvider(
             create: (context) => locator<SearchProductBloc>(),
           ),
+          BlocProvider(
+            create: (context) => locator<CartProductBloc>(),
+          ),
         ],
         child: MaterialApp(
           theme: ThemeData(

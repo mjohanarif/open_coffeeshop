@@ -6,7 +6,7 @@
             "id": 1,
             "name": "Signature Blend",
             "description": "A rich, full-bodied coffee with notes of dark chocolate and black cherry. Grown on the slopes of a mist-covered mountain in Central America.",
-            "price": 12.000,
+            "price": 12000,
             "region": "Central America",
             "weight": 500,
             "flavor_profile": [
@@ -27,7 +27,7 @@
             "id": 2,
             "name": "Golden Sunrise",
             "description": "A smooth and bright coffee with a citrusy kick. Sourced from the rolling hills of Africa.",
-            "price": 10.000,
+            "price": 10000,
             "region": "Africa",
             "weight": 500,
             "flavor_profile": [
@@ -47,7 +47,7 @@
             "id": 3,
             "name": "Rainforest Rhapsody",
             "description": "An earthy and complex coffee with notes of toasted nuts and caramel. Sustainably grown in the rainforests of South America.",
-            "price": 14.000,
+            "price": 14000,
             "region": "South America",
             "weight": 500,
             "flavor_profile": [
@@ -67,7 +67,7 @@
             "id": 4,
             "name": "Harvest Moon",
             "description": "A smooth and earthy blend with notes of cocoa and hazelnut.",
-            "price": 9.000,
+            "price": 9000,
             "region": "Central America",
             "weight": 500,
             "flavor_profile": [
@@ -88,7 +88,7 @@
             "id": 5,
             "name": "Wildfire",
             "description": "A bold and smoky blend with notes of dark chocolate and molasses.",
-            "price": 12.000,
+            "price": 12000,
             "region": "Africa",
             "weight": 500,
             "flavor_profile": [
@@ -109,7 +109,7 @@
             "id": 6,
             "name": "Walnut Wonder",
             "description": "A smooth and nutty coffee from the slopes of South America.",
-            "price": 9.000,
+            "price": 9000,
             "region": "South America",
             "weight": 500,
             "flavor_profile": [
@@ -130,7 +130,7 @@
             "id": 7,
             "name": "Breezy Beans",
             "description": "This coffee blend is made from beans sourced from Honduras and Costa Rica. It is a light roast coffee with a bright and citrusy flavor profile. It is perfect for pour-over and drip coffee brewing methods.",
-            "price": 11.000,
+            "price": 11000,
             "region": "Central America",
             "weight": 500,
             "flavor_profile": [
@@ -148,7 +148,7 @@
             "id": 8,
             "name": "Indo-Viet Roast",
             "description": "This coffee blend is made from beans sourced from Indonesia and Vietnam. It is a medium-dark roast coffee with a spicy and earthy flavor profile, with notes of cinnamon and clove. It is perfect for drip and French press brewing methods.",
-            "price": 13.000,
+            "price": 13000,
             "region": "Asia Pacific",
             "weight": 500,
             "flavor_profile": [
@@ -170,7 +170,7 @@
             "id": 9,
             "name": "Ethiopian Yirgacheffe",
             "description": "A light and fruity coffee with notes of blueberry and citrus. Grown in the highlands of Ethiopia, this coffee is sure to brighten up your morning.",
-            "price": 12.000,
+            "price": 12000,
             "region": "Africa",
             "weight": 500,
             "roast_level": 2,
@@ -191,7 +191,7 @@
             "id": 10,
             "name": "Lazy Days",
             "description": "A medium-bodied coffee with a sweet and nutty flavor. Grown in the lush regions of Brazil, this coffee is perfect for a lazy afternoon.",
-            "price": 9.000,
+            "price": 9000,
             "region": "South America",
             "weight": 500,
             "roast_level": 3,

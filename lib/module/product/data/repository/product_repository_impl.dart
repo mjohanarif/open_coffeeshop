@@ -42,4 +42,31 @@ class ProductRepositoryImpl implements ProductsRepository {
       return Left(CacheFailure(e.message));
     }
   }
+
+  @override
+  Future<Either<Failure, CartOrderModel>> addProductCart(
+    (ProductModel, CartOrderModel) params,
+  ) async {
+    final result = await localDataSource.addProductCart(params);
+
+    return Right(result);
+  }
+
+  @override
+  Future<Either<Failure, CartOrderModel>> subtractProductCart(
+    (ProductModel, CartOrderModel) params,
+  ) async {
+    final result = await localDataSource.subtractProductCart(params);
+
+    return Right(result);
+  }
+
+  @override
+  Future<Either<Failure, CartOrderModel>> deleteProductCart(
+    (ProductModel, CartOrderModel) params,
+  ) async {
+    final result = await localDataSource.deleteProductCart(params);
+
+    return Right(result);
+  }
 }

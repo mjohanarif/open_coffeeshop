@@ -29,6 +29,21 @@ Future<void> initLocator() async {
         repository: locator(),
       ),
     )
+    ..registerLazySingleton(
+      () => AddProductCartUsecase(
+        repository: locator(),
+      ),
+    )
+    ..registerLazySingleton(
+      () => SubtractProductCartUsecase(
+        repository: locator(),
+      ),
+    )
+    ..registerLazySingleton(
+      () => DeleteProductCartUsecase(
+        repository: locator(),
+      ),
+    )
 
     // data source
     ..registerLazySingleton<ProductLocalDataSource>(
@@ -43,6 +58,9 @@ Future<void> initLocator() async {
     )
     ..registerFactory(
       () => SearchProductBloc(locator()),
+    )
+    ..registerFactory(
+      () => CartProductBloc(locator(), locator(), locator()),
     )
 
     // external

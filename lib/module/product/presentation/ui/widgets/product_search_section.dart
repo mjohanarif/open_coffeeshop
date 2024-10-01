@@ -23,68 +23,7 @@ class ProductSearchSection extends StatelessWidget {
                 shrinkWrap: true,
                 padding: const EdgeInsets.fromLTRB(4, 4, 4, 16),
                 itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      height: 100.h,
-                      padding: EdgeInsets.all(8.sp),
-                      decoration: BoxDecoration(
-                        boxShadow: AppColors.primaryShadow,
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(16),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            CustomCachedImage(
-                              urlToImage: data[index].imageUrl,
-                              width: 100.w,
-                              height: 100.h,
-                            ),
-                            AppSpacing.h16(),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    data[index].name,
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.bold),
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.justify,
-                                  ),
-                                  Text(
-                                    data[index].description,
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.justify,
-                                  ),
-                                  const Spacer(),
-                                  Align(
-                                    alignment: Alignment.bottomRight,
-                                    child: Text(
-                                      data[index]
-                                          .price
-                                          .toString()
-                                          .currencyFormatRp,
-                                      style: const TextStyle(
-                                        color: AppColors.primary,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            AppSpacing.h16(),
-                          ],
-                        ),
-                      ),
-                    ),
-                  );
+                  return ProductCard(data: data[index]);
                 },
                 separatorBuilder: (context, index) => AppSpacing.v16(),
                 itemCount: data.length,

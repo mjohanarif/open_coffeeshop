@@ -10,6 +10,11 @@ abstract class ProductLocalDataSource {
   Future<ProductsReponse> searchProducts(String query);
   Future<String> saveProducts(ProductsReponse productList);
   Future<bool> isDataSavedLocally();
+  Future<CartOrderModel> addProductCart((ProductModel, CartOrderModel) params);
+  Future<CartOrderModel> subtractProductCart(
+      (ProductModel, CartOrderModel) params);
+  Future<CartOrderModel> deleteProductCart(
+      (ProductModel, CartOrderModel) params);
 }
 
 class ProductLocalDataSourceImpl implements ProductLocalDataSource {
@@ -98,5 +103,45 @@ class ProductLocalDataSourceImpl implements ProductLocalDataSource {
   @override
   Future<bool> isDataSavedLocally() async {
     return await cacheHandler.cache.boxExists(Constant.productKey);
+  }
+
+  @override
+  Future<CartOrderModel> addProductCart(
+      (ProductModel, CartOrderModel) params) async {
+    int isExist = params.$2.cartList
+        .indexWhere((element) => element.products == params.$1);
+    if (isExist == -1) {
+      params.$2.cartList.add(
+        CartProductModel(total: 1, products: params.$1),
+      );
+    } else {
+      params.$2.cartList[isExist] = params.$2.cartList[isExist]
+          .copyWith(total: params.$2.cartList[isExist].total + 1);
+    }
+    return params.$2;
+  }
+
+  @override
+  Future<CartOrderModel> subtractProductCart(
+      (ProductModel, CartOrderModel) params) async {
+    int isExist = params.$2.cartList
+        .indexWhere((element) => element.products == params.$1);
+    if (isExist != -1) {
+      params.$2.cartList[isExist] = params.$2.cartList[isExist]
+          .copyWith(total: params.$2.cartList[isExist].total - 1);
+    }
+
+    return params.$2;
+  }
+
+  @override
+  Future<CartOrderModel> deleteProductCart(
+      (ProductModel, CartOrderModel) params) async {
+    int isExist = params.$2.cartList
+        .indexWhere((element) => element.products == params.$1);
+    if (isExist != -1) {
+      params.$2.cartList.removeAt(isExist);
+    }
+    return params.$2;
   }
 }
